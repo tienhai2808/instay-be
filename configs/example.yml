@@ -1,0 +1,70 @@
+server:
+  api_prefix:
+  port:
+  write_timeout:
+  read_timeout:
+  max_header_bytes:
+  idle_timeout:
+  allow_origins:
+    -
+  allow_methods:
+    -
+  allow_headers:
+    -
+  expose_headers:
+    -
+  allow_credentials:
+  max_age:
+
+jwt:
+  access_name:
+  refresh_name:
+  guest_name:
+  secret_key:
+  access_expires_in:
+  refresh_expires_in:
+
+log:
+  level:
+  encoding:
+
+postgresql:
+  host:
+  port:
+  user:
+  password:
+  ssl_mode:
+  db_name:
+
+redis:
+  host:
+  port:
+  password:
+  use_ssl:
+
+minio:
+  endpoint:
+  access_key_id:
+  secret_access_key:
+  region:
+  bucket:
+  public_read:
+  use_ssl:
+
+super_user:
+  username:
+  password:
+
+rabbitmq:
+  host:
+  port:
+  user:
+  pass:
+  use_ssl:
+  vhost:
+
+smtp:
+  host:
+  port:
+  user:
+  password:

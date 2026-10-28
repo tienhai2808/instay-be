@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package ai;
+option go_package = ".";
+
+service AIService {
+  rpc Ping(PingRequest) returns (PingResponse);
+  rpc AnalyzeReview(AnalyzeReviewRequest) returns (AnalyzeReviewResponse);
+  rpc PredictBooking(PredictBookingRequest) returns (PredictBookingResponse);
+}
+
+message PingRequest {}
+
+message PingResponse {}
+
+message AnalyzeReviewRequest {
+  string text = 1;
+}
+
+message AspectResponse {
+  string aspect = 1;
+  string sentiment = 2;
+  float score = 3;
+}
+
+message AnalyzeReviewResponse {
+  repeated AspectResponse aspects = 1;
+}
+
+message BookingFeatures {
+  optional string hotel = 1;
+  optional int32 lead_time = 2;
+  optional int32 arrival_date_year = 3;
+  optional string arrival_date_month = 4;
+  optional int32 arrival_date_week_number = 5;
+  optional int32 arrival_date_day_of_month = 6;
+  optional int32 stays_in_weekend_nights = 7;
+  optional int32 stays_in_week_nights = 8;
+  optional int32 adults = 9;
+  optional double children = 10;
+  optional int32 babies = 11;
+  optional string meal = 12;
+  optional string country = 13;
+  optional string market_segment = 14;
+  optional string distribution_channel = 15;
+  optional int32 is_repeated_guest = 16;
+  optional int32 previous_cancellations = 17;
+  optional int32 previous_bookings_not_canceled = 18;
+  optional string reserved_room_type = 19;
+  optional string assigned_room_type = 20;
+  optional int32 booking_changes = 21;
+  optional string deposit_type = 22;
+  optional double agent = 23;
+  optional double company = 24;
+  optional int32 days_in_waiting_list = 25;
+  optional string customer_type = 26;
+  optional double adr = 27;
+  optional int32 required_car_parking_spaces = 28;
+  optional int32 total_of_special_requests = 29;
+}
+
+message PredictBookingRequest {
+  int64 id = 1;
+  BookingFeatures features = 2;
+}
+
+message PredictBookingResponse {
+  int64 id = 1;
+  float cancellation_probability = 2;
+  int32 prediction_label = 3;
+  bool will_cancel = 4;
+  string risk_level = 5;
+}

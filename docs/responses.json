@@ -1,0 +1,1130 @@
+{
+  "error_codes": {
+    "4000": {
+      "en": "Invalid data",
+      "vi": "Dữ liệu không hợp lệ"
+    },
+    "4001": {
+      "en": "Incorrect username or password",
+      "vi": "Sai tên đăng nhập hoặc mật khẩu"
+    },
+    "4002": {
+      "en": "Invalid or expired token",
+      "vi": "Token không hợp lệ hoặc đã hết hạn"
+    },
+    "4003": {
+      "en": "Unauthorized",
+      "vi": "Không có quyền truy cập"
+    },
+    "4004": {
+      "en": "Please login again",
+      "vi": "Vui lòng đăng nhập lại"
+    },
+    "4005": {
+      "en": "User not found",
+      "vi": "Không tìm thấy người dùng"
+    },
+    "4006": {
+      "en": "Incorrect password",
+      "vi": "Mật khẩu không đúng"
+    },
+    "4007": {
+      "en": "Email does not exist",
+      "vi": "Email không tồn tại"
+    },
+    "4008": {
+      "en": "Too many attempts",
+      "vi": "Quá nhiều lần thử"
+    },
+    "4009": {
+      "en": "Invalid or expired OTP",
+      "vi": "OTP không hợp lệ hoặc đã hết hạn"
+    },
+    "4010": {
+      "en": "Email already exists",
+      "vi": "Email đã tồn tại"
+    },
+    "4011": {
+      "en": "Phone already exists",
+      "vi": "Số điện thoại đã tồn tại"
+    },
+    "4012": {
+      "en": "Department not found",
+      "vi": "Không tìm thấy phòng ban"
+    },
+    "4013": {
+      "en": "Username already exists",
+      "vi": "Tên đăng nhập đã tồn tại"
+    },
+    "4014": {
+      "en": "Forbidden",
+      "vi": "Không được phép"
+    },
+    "4015": {
+      "en": "Name already exists",
+      "vi": "Tên đã tồn tại"
+    },
+    "4016": {
+      "en": "Invalid id",
+      "vi": "ID không hợp lệ"
+    },
+    "4017": {
+      "en": "Need 1 active administrator",
+      "vi": "Cần ít nhất 1 quản trị viên đang hoạt động"
+    },
+    "4018": {
+      "en": "Protected record",
+      "vi": "Bản ghi đang được sử dụng"
+    },
+    "4019": {
+      "en": "Has user not found",
+      "vi": "Không tìm thấy người dùng liên quan"
+    },
+    "4020": {
+      "en": "Tenant not found",
+      "vi": "Không tìm thấy tenant"
+    },
+    "4021": {
+      "en": "Invalid domain",
+      "vi": "Domain không hợp lệ"
+    },
+    "4022": {
+      "en": "Domain not allowed",
+      "vi": "Domain không được phép"
+    },
+    "4023": {
+      "en": "Service type already exists",
+      "vi": "Loại dịch vụ đã tồn tại"
+    },
+    "4024": {
+      "en": "Service type not found",
+      "vi": "Không tìm thấy loại dịch vụ"
+    },
+    "4025": {
+      "en": "Service already exists",
+      "vi": "Dịch vụ đã tồn tại"
+    },
+    "4026": {
+      "en": "Service not found",
+      "vi": "Không tìm thấy dịch vụ"
+    },
+    "4027": {
+      "en": "Support category already exists",
+      "vi": "Danh mục hỗ trợ đã tồn tại"
+    },
+    "4028": {
+      "en": "Support category not found",
+      "vi": "Không tìm thấy danh mục hỗ trợ"
+    },
+    "4029": {
+      "en": "Source already exists",
+      "vi": "Nguồn đã tồn tại"
+    },
+    "4030": {
+      "en": "Source not found",
+      "vi": "Không tìm thấy nguồn"
+    },
+    "4031": {
+      "en": "Room type already exists",
+      "vi": "Loại phòng đã tồn tại"
+    },
+    "4032": {
+      "en": "Booking already exists",
+      "vi": "Đặt phòng đã tồn tại"
+    },
+    "4033": {
+      "en": "Room type not found",
+      "vi": "Không tìm thấy loại phòng"
+    },
+    "4034": {
+      "en": "Booking not found",
+      "vi": "Không tìm thấy đặt phòng"
+    },
+    "4035": {
+      "en": "Floor already exists",
+      "vi": "Tầng đã tồn tại"
+    },
+    "4036": {
+      "en": "Room already exists",
+      "vi": "Phòng đã tồn tại"
+    },
+    "4037": {
+      "en": "Floor not found",
+      "vi": "Không tìm thấy tầng"
+    },
+    "4038": {
+      "en": "Has permission not found",
+      "vi": "Không tìm thấy quyền liên quan"
+    },
+    "4039": {
+      "en": "Booking expired",
+      "vi": "Đặt phòng đã hết hạn"
+    },
+    "4040": {
+      "en": "Booking room not found",
+      "vi": "Không tìm thấy phòng đặt"
+    },
+    "4041": {
+      "en": "Max room reached",
+      "vi": "Đã đạt số phòng tối đa"
+    },
+    "4042": {
+      "en": "Room not found",
+      "vi": "Không tìm thấy phòng"
+    },
+    "4043": {
+      "en": "Room currently occupied",
+      "vi": "Phòng đang được sử dụng"
+    },
+    "4044": {
+      "en": "Order service not found",
+      "vi": "Không tìm thấy dịch vụ đặt"
+    },
+    "4045": {
+      "en": "Invalid status",
+      "vi": "Trạng thái không hợp lệ"
+    },
+    "4046": {
+      "en": "Refresh token not found",
+      "vi": "Không tìm thấy refresh token"
+    },
+    "4047": {
+      "en": "Support ticket not found",
+      "vi": "Không tìm thấy ticket hỗ trợ"
+    },
+    "4048": {
+      "en": "Device token not found",
+      "vi": "Không tìm thấy device token"
+    },
+    "4049": {
+      "en": "Guest have already left review",
+      "vi": "Khách hàng đã để lại đánh giá"
+    },
+    "4050": {
+      "en": "Review not found",
+      "vi": "Không tìm thấy đánh giá"
+    },
+    "4051": {
+      "en": "Guest not found",
+      "vi": "Không tìm thấy khách lưu trú"
+    },
+    "4052": {
+      "en": "Booking selected room",
+      "vi": "Booking đã chọn phòng"
+    },
+    "4053": {
+      "en": "Booking can't update",
+      "vi": "Booking không thể chỉnh sửa"
+    },
+    "4054": {
+      "en": "Booking rooms not matched",
+      "vi": "Số lượng phòng booking và booking room không khớp"
+    },
+    "4055": {
+      "en": "Guest provided accommodation information",
+      "vi": "Khách hàng đã được khai báo lưu trú"
+    },
+    "4056": {
+      "en": "Message not found",
+      "vi": "Không tìm thấy tin nhắn"
+    },
+    "4057": {
+      "en": "Chat not found",
+      "vi": "Không tìm thấy cuộc trò chuyện"
+    },
+    "4058": {
+      "en": "Chat already exists",
+      "vi": "Cuộc trò chuyện đã tồn tại"
+    },
+    "4059": {
+      "en": "Pricing tag already exists",
+      "vi": "Thẻ giá đã tồn tại"
+    },
+    "4060": {
+      "en": "Pricing tag not found",
+      "vi": "Thẻ giá không tồn tại"
+    },
+    "4061": {
+      "en": "Pricing calendar date conflict",
+      "vi": "Xung đột thời gian trên lịch giá"
+    },
+    "4062": {
+      "en": "Room type price already exists",
+      "vi": "Giá loại phòng đã tồn tại"
+    },
+    "4063": {
+      "en": "Room type price not found",
+      "vi": "Không tìm thấy giá loại phòng"
+    },
+    "4064": {
+      "en": "Event already exists",
+      "vi": "Sự kiện đã tồn tại"
+    },
+    "4065": {
+      "en": "Event not found",
+      "vi": "Không tìm thấy sự kiện"
+    },
+    "4066": {
+      "en": "Branch already exists",
+      "vi": "Chi nhánh đã tồn tại"
+    },
+    "4067": {
+      "en": "Branch not found",
+      "vi": "Không tìm thấy chi nhánh"
+    },
+    "5000": {
+      "en": "Internal server error",
+      "vi": "Lỗi hệ thống"
+    }
+  },
+  "success_codes": {
+    "1000": {
+      "en": "Success",
+      "vi": "Thành công"
+    },
+    "1001": {
+      "en": "Login successful",
+      "vi": "Đăng nhập thành công"
+    },
+    "1002": {
+      "en": "Logout successful",
+      "vi": "Đăng xuất thành công"
+    },
+    "1003": {
+      "en": "Password changed successfully",
+      "vi": "Đổi mật khẩu thành công"
+    },
+    "1004": {
+      "en": "Forgot password request sent successfully",
+      "vi": "Gửi yêu cầu quên mật khẩu thành công"
+    },
+    "1005": {
+      "en": "Forgot password verification successful",
+      "vi": "Xác minh quên mật khẩu thành công"
+    },
+    "1006": {
+      "en": "Password reset successful",
+      "vi": "Đặt lại mật khẩu thành công"
+    },
+    "1007": {
+      "en": "User information updated successfully",
+      "vi": "Cập nhật thông tin người dùng thành công"
+    },
+    "1008": {
+      "en": "User created successfully",
+      "vi": "Tạo người dùng thành công"
+    },
+    "1009": {
+      "en": "Department created successfully",
+      "vi": "Tạo phòng ban thành công"
+    },
+    "1010": {
+      "en": "User updated successfully",
+      "vi": "Cập nhật người dùng thành công"
+    },
+    "1011": {
+      "en": "User password updated successfully",
+      "vi": "Cập nhật mật khẩu người dùng thành công"
+    },
+    "1012": {
+      "en": "User deleted successfully",
+      "vi": "Xóa người dùng thành công"
+    },
+    "1013": {
+      "en": "Users deleted successfully",
+      "vi": "Xóa danh sách người dùng thành công"
+    },
+    "1014": {
+      "en": "Department updated successfully",
+      "vi": "Cập nhật phòng ban thành công"
+    },
+    "1015": {
+      "en": "Department deleted successfully",
+      "vi": "Xóa phòng ban thành công"
+    },
+    "1016": {
+      "en": "Service type created successfully",
+      "vi": "Tạo loại dịch vụ thành công"
+    },
+    "1017": {
+      "en": "Service type updated successfully",
+      "vi": "Cập nhật loại dịch vụ thành công"
+    },
+    "1018": {
+      "en": "Service type deleted successfully",
+      "vi": "Xóa loại dịch vụ thành công"
+    },
+    "1019": {
+      "en": "Service processed successfully",
+      "vi": "Thao tác dịch vụ thành công"
+    },
+    "1020": {
+      "en": "Services deleted successfully",
+      "vi": "Xóa danh sách dịch vụ thành công"
+    },
+    "1021": {
+      "en": "Support category created successfully",
+      "vi": "Tạo danh mục hỗ trợ thành công"
+    },
+    "1022": {
+      "en": "Support category updated successfully",
+      "vi": "Cập nhật danh mục hỗ trợ thành công"
+    },
+    "1023": {
+      "en": "Support category deleted successfully",
+      "vi": "Xóa danh mục hỗ trợ thành công"
+    },
+    "1024": {
+      "en": "Source created successfully",
+      "vi": "Tạo nguồn thành công"
+    },
+    "1025": {
+      "en": "Source updated successfully",
+      "vi": "Cập nhật nguồn thành công"
+    },
+    "1026": {
+      "en": "Source deleted successfully",
+      "vi": "Xóa nguồn thành công"
+    },
+    "1027": {
+      "en": "Room type created successfully",
+      "vi": "Tạo loại phòng thành công"
+    },
+    "1028": {
+      "en": "Booking created successfully",
+      "vi": "Tạo đặt phòng thành công"
+    },
+    "1029": {
+      "en": "Floor created successfully",
+      "vi": "Tạo tầng thành công"
+    },
+    "1030": {
+      "en": "Room created successfully",
+      "vi": "Tạo phòng thành công"
+    },
+    "1031": {
+      "en": "Booking room created successfully",
+      "vi": "Tạo phòng đặt thành công"
+    },
+    "1032": {
+      "en": "Booking room verified successfully",
+      "vi": "Xác minh phòng đặt thành công"
+    },
+    "1033": {
+      "en": "Service order created successfully",
+      "vi": "Tạo đơn dịch vụ thành công"
+    },
+    "1034": {
+      "en": "Support ticket created successfully",
+      "vi": "Tạo phiếu hỗ trợ thành công"
+    },
+    "1035": {
+      "en": "Floor updated successfully",
+      "vi": "Cập nhật tầng thành công"
+    },
+    "1036": {
+      "en": "Room type updated successfully",
+      "vi": "Cập nhật loại phòng thành công"
+    },
+    "1037": {
+      "en": "Floor deleted successfully",
+      "vi": "Xóa tầng thành công"
+    },
+    "1038": {
+      "en": "Room type deleted successfully",
+      "vi": "Xóa loại phòng thành công"
+    },
+    "1039": {
+      "en": "Room updated successfully",
+      "vi": "Cập nhật phòng thành công"
+    },
+    "1040": {
+      "en": "Room deleted successfully",
+      "vi": "Xóa phòng thành công"
+    },
+    "1041": {
+      "en": "Rooms deleted successfully",
+      "vi": "Xóa danh sách phòng thành công"
+    },
+    "1042": {
+      "en": "Service order updated successfully",
+      "vi": "Cập nhật đơn dịch vụ thành công"
+    },
+    "1043": {
+      "en": "Support ticket updated successfully",
+      "vi": "Cập nhật phiếu hỗ trợ thành công"
+    },
+    "1044": {
+      "en": "Service updated successfully",
+      "vi": "Cập nhật dịch vụ thành công"
+    },
+    "1045": {
+      "en": "Review created successfully",
+      "vi": "Tạo đánh giá thành công"
+    },
+    "1046": {
+      "en": "Review updated successfully",
+      "vi": "Cập nhật đánh giá thành công"
+    },
+    "1047": {
+      "en": "Guest created successfully",
+      "vi": "Tạo khách lưu trú thành công"
+    },
+    "1048": {
+      "en": "Guest updated successfully",
+      "vi": "Cập nhật khách lưu trú thành công"
+    },
+    "1049": {
+      "en": "Booking updated successfully",
+      "vi": "Cập nhật booking thành công"
+    },
+    "1050": {
+      "en": "Booking deleted successfully",
+      "vi": "Xóa booking thành công"
+    },
+    "1051": {
+      "en": "Tenant updated successfully",
+      "vi": "Cập nhật thông tin khách sạn thành công"
+    },
+    "1052": {
+      "en": "Pricing tag created successfully",
+      "vi": "Tạo thẻ giá thành công"
+    },
+    "1053": {
+      "en": "Pricing tag updated successfully",
+      "vi": "Cập nhật thẻ giá thành công"
+    },
+    "1054": {
+      "en": "Pricing tag deleted successfully",
+      "vi": "Xóa thẻ giá thành công"
+    },
+    "1055": {
+      "en": "Pricing calendar updated successfully",
+      "vi": "Cập nhật lịch giá thành công"
+    },
+    "1056": {
+      "en": "Room type price created successfully",
+      "vi": "Tạo giá loại phòng thành công"
+    },
+    "1057": {
+      "en": "Room type price updated successfully",
+      "vi": "Cập nhật giá loại phòng thành công"
+    },
+    "1058": {
+      "en": "Room type price deleted successfully",
+      "vi": "Xóa giá loại phòng thành công"
+    },
+    "1059": {
+      "en": "Customer created successfully",
+      "vi": "Tạo khách hàng thành công"
+    },
+    "1060": {
+      "en": "Event created successfully",
+      "vi": "Tạo sự kiện thành công"
+    },
+    "1061": {
+      "en": "Event updated successfully",
+      "vi": "Cập nhật sự kiện thành công"
+    },
+    "1062": {
+      "en": "Event deleted successfully",
+      "vi": "Xóa sự kiện thành công"
+    },
+    "1063": {
+      "en": "Events deleted successfully",
+      "vi": "Xóa danh sách sự kiện thành công"
+    },
+    "1064": {
+      "en": "Branch created successfully",
+      "vi": "Tạo chi nhánh thành công"
+    },
+    "1065": {
+      "en": "Branch updated successfully",
+      "vi": "Cập nhật chi nhánh thành công"
+    },
+    "1066": {
+      "en": "Branch deleted successfully",
+      "vi": "Xóa chi nhánh thành công"
+    }
+  },
+  "push_notification_codes": {
+    "6000": {
+      "en": "New booking",
+      "vi": "Booking mới"
+    },
+    "6001": {
+      "en": "New service order",
+      "vi": "Đơn dịch vụ mới"
+    },
+    "6002": {
+      "en": "New support ticket",
+      "vi": "Ticket hỗ trợ mới"
+    },
+    "6003": {
+      "en": "Booking cancelled",
+      "vi": "Booking đã hủy"
+    },
+    "6004": {
+      "en": "Service order confirmed",
+      "vi": "Đơn dịch vụ đã xác nhận"
+    },
+    "6005": {
+      "en": "Support ticket confirmed",
+      "vi": "Ticket hỗ trợ đã xác nhận"
+    },
+    "6006": {
+      "en": "Service order cancelled",
+      "vi": "Đơn dịch vụ đã hủy"
+    },
+    "6007": {
+      "en": "Support ticket cancelled",
+      "vi": "Ticket hỗ trợ đã hủy"
+    },
+    "6008": {
+      "en": "Event published",
+      "vi": "Sự kiện đã được đăng"
+    }
+  },
+  "binding_errors": {
+    "required": {
+      "en": "{field} is required",
+      "vi": "{field} là bắt buộc"
+    },
+    "min": {
+      "en": "{field} must be at least {param}",
+      "vi": "{field} phải tối thiểu {param}"
+    },
+    "max": {
+      "en": "{field} must be at most {param}",
+      "vi": "{field} phải tối đa {param}"
+    },
+    "len": {
+      "en": "{field} must be length {param}",
+      "vi": "{field} phải có độ dài {param}"
+    },
+    "email": {
+      "en": "{field} must be a valid email",
+      "vi": "{field} phải là email hợp lệ"
+    },
+    "uuid4": {
+      "en": "{field} must be a valid UUID",
+      "vi": "{field} phải là UUID hợp lệ"
+    },
+    "numeric": {
+      "en": "{field} must be numeric",
+      "vi": "{field} phải là số"
+    },
+    "oneof": {
+      "en": "{field} must be one of: {param}",
+      "vi": "{field} phải thuộc một trong: {param}"
+    },
+    "gt": {
+      "en": "{field} must be greater than {param}",
+      "vi": "{field} phải lớn hơn {param}"
+    },
+    "gte": {
+      "en": "{field} must be greater than or equal to {param}",
+      "vi": "{field} phải lớn hơn hoặc bằng {param}"
+    },
+    "lte": {
+      "en": "{field} must be less than or equal to {param}",
+      "vi": "{field} phải nhỏ hơn hoặc bằng {param}"
+    },
+    "doctype": {
+      "en": "{field} is not a supported document type",
+      "vi": "{field} không đúng loại tài liệu được hỗ trợ"
+    },
+    "type_error": {
+      "en": "Invalid type for {field}. Expected {param}",
+      "vi": "Sai kiểu dữ liệu cho {field}. Cần {param}"
+    },
+    "syntax_error": {
+      "en": "Malformed JSON at position {param}",
+      "vi": "JSON lỗi cú pháp tại vị trí {param}"
+    },
+    "invalid": {
+      "en": "Invalid request",
+      "vi": "Yêu cầu không hợp lệ"
+    },
+    "dive": {
+      "en": "{field} contains invalid item",
+      "vi": "{field} chứa phần tử không hợp lệ"
+    },
+    "omitempty": {
+      "en": "{field} is optional",
+      "vi": "{field} là tùy chọn"
+    }
+  },
+  "field_names": {
+    "filename": {
+      "en": "File name",
+      "vi": "Tên tệp"
+    },
+    "contenttype": {
+      "en": "Content type",
+      "vi": "Loại nội dung"
+    },
+    "files": {
+      "en": "Files",
+      "vi": "Danh sách tệp"
+    },
+    "keys": {
+      "en": "Keys",
+      "vi": "Danh sách khóa"
+    },
+    "username": {
+      "en": "Username",
+      "vi": "Tên đăng nhập"
+    },
+    "password": {
+      "en": "Password",
+      "vi": "Mật khẩu"
+    },
+    "oldpassword": {
+      "en": "Old password",
+      "vi": "Mật khẩu cũ"
+    },
+    "newpassword": {
+      "en": "New password",
+      "vi": "Mật khẩu mới"
+    },
+    "email": {
+      "en": "Email",
+      "vi": "Email"
+    },
+    "forgotpasswordtoken": {
+      "en": "Forgot password token",
+      "vi": "Mã quên mật khẩu"
+    },
+    "otp": {
+      "en": "OTP",
+      "vi": "Mã OTP"
+    },
+    "resetpasswordtoken": {
+      "en": "Reset password token",
+      "vi": "Mã đặt lại mật khẩu"
+    },
+    "phone": {
+      "en": "Phone number",
+      "vi": "Số điện thoại"
+    },
+    "firstname": {
+      "en": "First name",
+      "vi": "Tên"
+    },
+    "lastname": {
+      "en": "Last name",
+      "vi": "Họ"
+    },
+    "avatar": {
+      "en": "Avatar",
+      "vi": "Ảnh đại diện"
+    },
+    "role": {
+      "en": "Role",
+      "vi": "Vai trò"
+    },
+    "isactive": {
+      "en": "Active status",
+      "vi": "Trạng thái hoạt động"
+    },
+    "departmentid": {
+      "en": "Department ID",
+      "vi": "Mã phòng ban"
+    },
+    "name": {
+      "en": "Name",
+      "vi": "Tên"
+    },
+    "address": {
+      "en": "Address",
+      "vi": "Địa chỉ"
+    },
+    "description": {
+      "en": "Description",
+      "vi": "Mô tả"
+    },
+    "permissionids": {
+      "en": "Permission IDs",
+      "vi": "Danh sách mã quyền"
+    },
+    "page": {
+      "en": "Page",
+      "vi": "Trang"
+    },
+    "limit": {
+      "en": "Limit",
+      "vi": "Giới hạn"
+    },
+    "sort": {
+      "en": "Sort",
+      "vi": "Sắp xếp"
+    },
+    "order": {
+      "en": "Order",
+      "vi": "Thứ tự"
+    },
+    "search": {
+      "en": "Search",
+      "vi": "Từ khóa tìm kiếm"
+    },
+    "floorid": {
+      "en": "Floor ID",
+      "vi": "Mã tầng"
+    },
+    "roomtypeid": {
+      "en": "Room type ID",
+      "vi": "Mã loại phòng"
+    },
+    "code": {
+      "en": "Code",
+      "vi": "Mã"
+    },
+    "lang": {
+      "en": "Language",
+      "vi": "Ngôn ngữ"
+    },
+    "ids": {
+      "en": "IDs",
+      "vi": "Danh sách mã"
+    },
+    "servicetypeid": {
+      "en": "Service type ID",
+      "vi": "Mã loại dịch vụ"
+    },
+    "price": {
+      "en": "Price",
+      "vi": "Giá"
+    },
+    "images": {
+      "en": "Images",
+      "vi": "Danh sách hình ảnh"
+    },
+    "key": {
+      "en": "Key",
+      "vi": "Khóa"
+    },
+    "isthumbnail": {
+      "en": "Is thumbnail",
+      "vi": "Là ảnh đại diện"
+    },
+    "sortorder": {
+      "en": "Sort order",
+      "vi": "Thứ tự sắp xếp"
+    },
+    "supportcategoryid": {
+      "en": "Support category ID",
+      "vi": "Mã danh mục hỗ trợ"
+    },
+    "bookingnumber": {
+      "en": "Booking number",
+      "vi": "Mã đặt phòng"
+    },
+    "guestfullname": {
+      "en": "Guest full name",
+      "vi": "Họ tên khách"
+    },
+    "guestemail": {
+      "en": "Guest email",
+      "vi": "Email khách"
+    },
+    "guestphone": {
+      "en": "Guest phone",
+      "vi": "Số điện thoại khách"
+    },
+    "checkin": {
+      "en": "Check-in date",
+      "vi": "Ngày nhận phòng"
+    },
+    "checkout": {
+      "en": "Check-out date",
+      "vi": "Ngày trả phòng"
+    },
+    "roomnumber": {
+      "en": "Room number",
+      "vi": "Số phòng"
+    },
+    "guestnumber": {
+      "en": "Number of guests",
+      "vi": "Số lượng khách"
+    },
+    "bookedon": {
+      "en": "Booked on",
+      "vi": "Ngày đặt"
+    },
+    "totalnetprice": {
+      "en": "Total net price",
+      "vi": "Tổng giá net"
+    },
+    "totalsellprice": {
+      "en": "Total sell price",
+      "vi": "Tổng giá bán"
+    },
+    "promotionname": {
+      "en": "Promotion name",
+      "vi": "Tên khuyến mãi"
+    },
+    "mealplan": {
+      "en": "Meal plan",
+      "vi": "Gói bữa ăn"
+    },
+    "bookingpreferences": {
+      "en": "Booking preferences",
+      "vi": "Yêu cầu đặt phòng"
+    },
+    "bookingconditions": {
+      "en": "Booking conditions",
+      "vi": "Điều kiện đặt phòng"
+    },
+    "note": {
+      "en": "Note",
+      "vi": "Ghi chú"
+    },
+    "status": {
+      "en": "Status",
+      "vi": "Trạng thái"
+    },
+    "sourceid": {
+      "en": "Source ID",
+      "vi": "Mã nguồn"
+    },
+    "bookingid": {
+      "en": "Booking ID",
+      "vi": "Mã đặt phòng"
+    },
+    "roomid": {
+      "en": "Room ID",
+      "vi": "Mã phòng"
+    },
+    "serviceid": {
+      "en": "Service ID",
+      "vi": "Mã dịch vụ"
+    },
+    "quantity": {
+      "en": "Quantity",
+      "vi": "Số lượng"
+    },
+    "estimatedat": {
+      "en": "Estimated time",
+      "vi": "Thời gian dự kiến"
+    },
+    "content": {
+      "en": "Content",
+      "vi": "Nội dung"
+    },
+    "excerpt": {
+      "en": "Excerpt",
+      "vi": "Tóm tắt"
+    },
+    "guestnote": {
+      "en": "Guest note",
+      "vi": "Ghi chú của khách"
+    },
+    "priority": {
+      "en": "Priority",
+      "vi": "Mức ưu tiên"
+    },
+    "cancelreason": {
+      "en": "Cancel reason",
+      "vi": "Lý do hủy"
+    },
+    "staffnot": {
+      "en": "Staff note",
+      "vi": "Ghi chú nhân viên"
+    },
+    "fromdate": {
+      "en": "From date",
+      "vi": "Từ ngày"
+    },
+    "todate": {
+      "en": "To date",
+      "vi": "Đến ngày"
+    },
+    "devicetoken": {
+      "en": "Device token",
+      "vi": "Mã thiết bị"
+    },
+    "json": {
+      "en": "JSON",
+      "vi": "JSON"
+    },
+    "unknown": {
+      "en": "Unknown",
+      "vi": "Không xác định"
+    },
+    "birthyear": {
+      "en": "Birth year",
+      "vi": "Năm sinh"
+    },
+    "bookingroomid": {
+      "en": "Booking room ID",
+      "vi": "Mã phòng đặt"
+    },
+    "city": {
+      "en": "City",
+      "vi": "Thành phố"
+    },
+    "ward": {
+      "en": "Ward",
+      "vi": "Phường/Xã"
+    },
+    "dates": {
+      "en": "Dates",
+      "vi": "Danh sách ngày"
+    },
+    "discountendat": {
+      "en": "Discount end time",
+      "vi": "Thời gian kết thúc giảm giá"
+    },
+    "discountstartat": {
+      "en": "Discount start time",
+      "vi": "Thời gian bắt đầu giảm giá"
+    },
+    "discounttype": {
+      "en": "Discount type",
+      "vi": "Loại giảm giá"
+    },
+    "discountvalue": {
+      "en": "Discount value",
+      "vi": "Giá trị giảm giá"
+    },
+    "dob": {
+      "en": "Date of birth",
+      "vi": "Ngày sinh"
+    },
+    "documenttype": {
+      "en": "Document type",
+      "vi": "Loại giấy tờ"
+    },
+    "fullname": {
+      "en": "Full name",
+      "vi": "Họ tên"
+    },
+    "gender": {
+      "en": "Gender",
+      "vi": "Giới tính"
+    },
+    "hasdiscount": {
+      "en": "Has discount",
+      "vi": "Có giảm giá"
+    },
+    "icon": {
+      "en": "Icon",
+      "vi": "Biểu tượng"
+    },
+    "is_active": {
+      "en": "Active status",
+      "vi": "Trạng thái hoạt động"
+    },
+    "logo": {
+      "en": "Logo",
+      "vi": "Logo"
+    },
+    "maxpeople": {
+      "en": "Max people",
+      "vi": "Số người tối đa"
+    },
+    "national": {
+      "en": "Nationality",
+      "vi": "Quốc tịch"
+    },
+    "passportnumber": {
+      "en": "Passport number",
+      "vi": "Số hộ chiếu"
+    },
+    "pricingcalendars": {
+      "en": "Pricing calendars",
+      "vi": "Danh sách lịch giá"
+    },
+    "pricingtagid": {
+      "en": "Pricing tag ID",
+      "vi": "Mã thẻ giá"
+    },
+    "pricingtype": {
+      "en": "Pricing type",
+      "vi": "Loại điều chỉnh giá"
+    },
+    "pricingvalue": {
+      "en": "Pricing value",
+      "vi": "Giá trị điều chỉnh giá"
+    },
+    "roomids": {
+      "en": "Room IDs",
+      "vi": "Danh sách mã phòng"
+    },
+    "sessionid": {
+      "en": "Session ID",
+      "vi": "Mã phiên"
+    },
+    "send_notification": {
+      "en": "Send notification",
+      "vi": "Gửi thông báo"
+    },
+    "staffnote": {
+      "en": "Staff note",
+      "vi": "Ghi chú nhân viên"
+    },
+    "star": {
+      "en": "Star rating",
+      "vi": "Số sao"
+    },
+    "surfacearea": {
+      "en": "Surface area",
+      "vi": "Diện tích"
+    },
+    "thumbnail": {
+      "en": "Thumbnail",
+      "vi": "Ảnh đại diện"
+    },
+    "title": {
+      "en": "Title",
+      "vi": "Tiêu đề"
+    },
+    "webhooktype": {
+      "en": "Webhook type",
+      "vi": "Loại webhook"
+    }
+  },
+  "notification_codes": {
+    "6000": {
+      "en": "You have a new booking",
+      "vi": "Bạn có một đơn đặt phòng mới"
+    },
+    "6001": {
+      "en": "You have a new service order",
+      "vi": "Bạn có một đơn đặt dịch vụ mới"
+    },
+    "6002": {
+      "en": "You have a new support ticket",
+      "vi": "Bạn có một phiếu hỗ trợ mới"
+    },
+    "6003": {
+      "en": "You have a cancelled booking",
+      "vi": "Bạn có một booking đã bị hủy"
+    },
+    "6004": {
+      "en": "You have a confirmed order service",
+      "vi": "Bạn có một đơn đặt hàng đã được xác nhận"
+    },
+    "6005": {
+      "en": "You have a confirmed support ticket",
+      "vi": "Bạn có một phiếu hỗ trợ đã được xác nhận"
+    },
+    "6006": {
+      "en": "You have a cancelled order service",
+      "vi": "Bạn có một đơn đặt hàng đã bị hủy"
+    },
+    "6007": {
+      "en": "You have a cancelled support ticket",
+      "vi": "Bạn có một phiếu hỗ trợ đã bị hủy"
+    },
+    "6008": {
+      "en": "You have a new event",
+      "vi": "Bạn có một sự kiện mới"
+    }
+  },
+  "notes": {
+    "binding_payload": "On bind/validation error, API responds with code 4000 and data {field, tag, param}. field follows the request json tag when available (e.g. booking_room_id stays booking_room_id), or json for syntax errors.",
+    "data_placeholders": "{field} and {param} are placeholders from the backend error payload."
+  }
+}

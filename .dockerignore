@@ -1,0 +1,13 @@
+.git/
+.gitignore
+Dockerfile
+tmp/
+Makefile
+logs/
+README.md
+.env*
+docs/
+configs/
+scripts/
+*.proto
+.github/

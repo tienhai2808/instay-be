@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Subject }}</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    "
+  >
+    <div
+      style="
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+      "
+    >
+      <h2 style="color: #333">Instay</h2>
+      <h3>{{.Subject}}</h3>
+      <p>
+        Đây là mã OTP của bạn, nó sẽ hết hạn sau 5 phút: <p style="text-align: center"><strong style="font-size: 18px; color: #333;">{{.Otp}}</strong></p>
+      </p>
+      <p style="color: #777">
+        Email này được gửi từ Instay. Vui lòng không trả lời trực tiếp.
+      </p>
+    </div>
+  </body>
+</html>
