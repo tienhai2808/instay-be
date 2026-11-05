@@ -15,11 +15,11 @@ proto/                   # protobuf contracts and generated code
 scripts/                 # lint, vulnerability and container scans
 ```
 
-Stack: Go 1.25.12, Gin, GORM/PostgreSQL, MongoDB, Redis, RabbitMQ, gRPC, S3-compatible object storage, Firebase Cloud Messaging, Zap and Atlas.
+Stack: Go 1.26.10, Gin, GORM/PostgreSQL, MongoDB, Redis, RabbitMQ, gRPC, S3-compatible object storage, Firebase Cloud Messaging, Zap and Atlas.
 
 ## Requirements
 
-- Go 1.25.12, GNU Make and Bash on Linux/WSL.
+- Go 1.26.10, GNU Make and Bash on Linux/WSL.
 - PostgreSQL, MongoDB, Redis, RabbitMQ and the AI gRPC service, with reachable addresses and credentials.
 - A Cloudflare R2 or AWS S3 bucket with a public read URL and credentials for storage operations.
 - A Google development service account for Firebase Cloud Messaging.

@@ -12,8 +12,9 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  GO_VERSION: "1.25.12"
+  GO_VERSION: "1.26.10"
   GOLANGCI_LINT_VERSION: "v2.12.2"
+  GOVULNCHECK_VERSION: "v1.9.0"
   COVERAGE_THRESHOLD: "40"
   IMAGE_NAME: tienhai2808/instay-be
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -116,13 +117,12 @@ jobs:
           cache: false
 
       - name: govulncheck
+        env:
+          GOTOOLCHAIN: local
         run: |
-          GO_BIN_DIR="$(go env GOPATH)/bin"
-          export PATH="$GO_BIN_DIR:$PATH"
-          if [ ! -x "$GO_BIN_DIR/govulncheck" ]; then
-            go install golang.org/x/vuln/cmd/govulncheck@latest
-          fi
-          "$GO_BIN_DIR/govulncheck" ./...
+          export GOBIN="$RUNNER_TEMP/ci-tools/govulncheck/$GOVULNCHECK_VERSION/bin"
+          go install "golang.org/x/vuln/cmd/govulncheck@$GOVULNCHECK_VERSION"
+          "$GOBIN/govulncheck" ./...
 
   build-test:
     name: Build & Test
