@@ -3,4 +3,3 @@ tmp/
 .env*
 !.env.example
 configs/*
-!example.yml

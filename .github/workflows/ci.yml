@@ -15,7 +15,7 @@ env:
   GO_VERSION: "1.25.12"
   GOLANGCI_LINT_VERSION: "v2.12.2"
   COVERAGE_THRESHOLD: "40"
-  IMAGE_NAME: ghcr.io/${{ github.repository }}
+  IMAGE_NAME: tienhai2808/instay-be
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   DOCKER_BUILDKIT: "1"
 
@@ -23,7 +23,6 @@ permissions:
   contents: read
   security-events: write
   id-token: write
-  packages: write
   pull-requests: write
   actions: read
 
@@ -252,7 +251,7 @@ jobs:
           overwrite: true
 
   publish:
-    name: Publish image to GHCR
+    name: Publish image to Docker Hub
     runs-on: ubuntu-24.04
     needs: container-scan
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -266,16 +265,14 @@ jobs:
       - name: Load Docker image
         run: docker load --input "$RUNNER_TEMP/docker-image/image.tar.gz"
 
-      - name: Login to GHCR
+      - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: tienhai2808
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Push image to GHCR
-        run: |
-          docker push ${{ env.IMAGE_NAME }}:${{ github.sha }}
+      - name: Push image to Docker Hub
+        run: docker push "$IMAGE_NAME:$GITHUB_SHA"
 
       - name: Install cosign
         run: |

@@ -11,14 +11,16 @@ import (
 )
 
 func main() {
-	seedName := os.Getenv("SD_NAME")
-	if seedName == "" {
-		log.Fatalln("seed name is required")
-	}
-
-	cfg, err := config.LoadConfig()
+	cfg, err := config.LoadConfig(os.Getenv("SEED_ENV_FILE"))
 	if err != nil {
 		log.Fatalln(err)
+	}
+
+	seedName := os.Getenv("SD_NAME")
+	switch seedName {
+	case "tenant", "admin", "migrate":
+	default:
+		log.Fatalln("SD_NAME must be tenant, admin or migrate")
 	}
 
 	ctn := container.NewContainer(cfg)

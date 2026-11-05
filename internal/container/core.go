@@ -8,11 +8,11 @@ import (
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/apikey"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/didit"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/fcm"
-	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/gcs"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/jwt"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/orm"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/rabbitmq"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/redis"
+	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/s3"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/smtp"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/sonyflake"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/zap"
@@ -85,7 +85,7 @@ func (c *Container) initCore() (err error) {
 
 	c.txPro = orm.NewTxProvider(c.SQL.ORM())
 
-	c.StoragePro = gcs.NewStorageProvider(c.cfg.Storage, c.stor.Client())
+	c.StoragePro = s3.NewStorageProvider(c.cfg.Storage, c.stor.Client())
 
 	c.PNPro = fcm.NewPushNotificationProvider(c.pn.Client())
 

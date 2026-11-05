@@ -87,7 +87,7 @@ func (r *chatRepositoryImpl) FindAllWithBookingRoomDetailsPaginated(ctx context.
 	db = db.Session(&gorm.Session{})
 	db = db.Preload("BookingRoom", r.preloadWithSchema(schema, entity.BookingRoomTableName, "id", "booking_id", "room_id"))
 	db = db.Preload("BookingRoom.Booking", r.preloadWithSchema(schema, entity.BookingTableName, "id", "booking_number", "guest_full_name", "guest_email", "guest_phone", "check_in", "check_out"))
-	db = db.Preload("BookingRoom.Room", r.preloadWithSchema(schema, entity.RoomTableName, "id", "name"))
+	db = db.Preload("BookingRoom.Room", r.preloadWithSchema(schema, entity.RoomTableName, "id", "name", "floor_id"))
 	db = db.Preload("BookingRoom.Room.Floor", r.preloadWithSchema(schema, entity.FloorTableName, "id", "branch_id"))
 
 	offset := (query.Page - 1) * query.Limit
@@ -141,7 +141,7 @@ func (r *chatRepositoryImpl) FindByIDWithBookingRoomDetails(ctx context.Context,
 		Table(r.schemaTable(schema, entity.ChatTableName)).
 		Preload("BookingRoom", r.preloadWithSchema(schema, entity.BookingRoomTableName, "id", "booking_id", "room_id")).
 		Preload("BookingRoom.Booking", r.preloadWithSchema(schema, entity.BookingTableName, "id", "booking_number", "guest_full_name", "guest_email", "guest_phone", "check_in", "check_out")).
-		Preload("BookingRoom.Room", r.preloadWithSchema(schema, entity.RoomTableName, "id", "name")).
+		Preload("BookingRoom.Room", r.preloadWithSchema(schema, entity.RoomTableName, "id", "name", "floor_id")).
 		Preload("BookingRoom.Room.Floor", r.preloadWithSchema(schema, entity.FloorTableName, "id", "branch_id")).
 		Where("id = ?", id).
 		First(&chatEntity).Error; err != nil {

@@ -104,5 +104,5 @@ func (c *Container) initLogic() {
 	c.notificationUC = notificationUC.NewNotificationUseCase(c.LogPro, c.NotificationRepo, c.userNotificationRepo, c.UserRepo)
 	c.messageUC = messageUC.NewMessageUseCase(c.LogPro, c.IDPro, c.txPro, c.chatRepo, c.bookingRoomRepo, c.messageRepo)
 	c.tenantUC = tenantUC.NewTenantUseCase(c.LogPro, c.MQPro, c.TenantRepo)
-	c.chatUC = chatUC.NewChatUseCase(c.LogPro, c.chatRepo, c.messageRepo, c.bookingRoomRepo, c.UserRepo, c.serviceRepo, c.supportCategoryRepo)
+	c.chatUC = chatUC.NewChatUseCase(c.LogPro, c.cfg.Storage.PublicBaseURL, c.chatRepo, c.messageRepo, c.bookingRoomRepo, c.UserRepo, c.serviceRepo, c.supportCategoryRepo)
 }

@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/base64"
 	"encoding/json"
+	"net/url"
 	"path"
 	"strings"
 	"time"
@@ -19,10 +20,9 @@ import (
 	"github.com/InstaySystem/is_v2-be/internal/domain/repository"
 )
 
-const attachmentURLPrefix = "https://storage.googleapis.com/instay-dev-public-bucket/"
-
 type chatUseCaseImpl struct {
 	logPro              port.LogProvider
+	publicFileBaseURL   string
 	chatRepo            repository.ChatRepository
 	messageRepo         repository.MessageRepository
 	bookingRoomRepo     repository.BookingRoomRepository
@@ -33,6 +33,7 @@ type chatUseCaseImpl struct {
 
 func NewChatUseCase(
 	logPro port.LogProvider,
+	publicFileBaseURL string,
 	chatRepo repository.ChatRepository,
 	messageRepo repository.MessageRepository,
 	bookingRoomRepo repository.BookingRoomRepository,
@@ -42,6 +43,7 @@ func NewChatUseCase(
 ) ChatUseCase {
 	return &chatUseCaseImpl{
 		logPro:              logPro,
+		publicFileBaseURL:   strings.TrimRight(publicFileBaseURL, "/"),
 		chatRepo:            chatRepo,
 		messageRepo:         messageRepo,
 		bookingRoomRepo:     bookingRoomRepo,
@@ -349,9 +351,10 @@ func (u *chatUseCaseImpl) ListMessagesForExternal(ctx context.Context, schema st
 				attachmentType = string(*msg.AttachmentType)
 			}
 
+			objectPath := (&url.URL{Path: "/" + key}).EscapedPath()
 			attachments = append(attachments, &external.ExternalAttachmentResponse{
 				Type: attachmentType,
-				URL:  attachmentURLPrefix + key,
+				URL:  u.publicFileBaseURL + objectPath,
 				Name: path.Base(key),
 			})
 		}

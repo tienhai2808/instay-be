@@ -13,20 +13,16 @@ MG_SRC := ./internal/infrastructure/tools/atlas.go
 PROTO_DIR := ./proto
 GEN_DIR := ./proto/gen
 
-ENV_FILE ?= .env.local
+ENV_FILE ?= .env
 MIGRATE_ENV_FILE ?= .env.migrate
 SEED_ENV_FILE ?= .env.seeder
-GCS_KEY_PATH ?= configs/gcs.json
 NAME ?=
 BASELINE ?=
 CM ?=
-export ENV_FILE MIGRATE_ENV_FILE SEED_ENV_FILE GCS_KEY_PATH NAME BASELINE CM
-# Export command-line/environment seed selection without embedding it in shell code.
-export SD_NAME
+export ENV_FILE MIGRATE_ENV_FILE SEED_ENV_FILE NAME BASELINE CM
 
-# Env files are trusted Bash assignments, not parsed as Make syntax.
-# File values override inherited environment values unless explicitly noted below.
-define LOAD_ENV
+# Atlas receives its separate migration settings as trusted Bash assignments.
+define LOAD_MIGRATION_ENV
 load_env() { \
   local file="$$1"; \
   if [[ ! -f "$$file" ]]; then \
@@ -43,13 +39,13 @@ endef
 
 help:
 	@printf '%s\n' \
-	  'Setup: copy .env.example to .env.local and fill credentials (see README.md).' \
+	  'Setup: copy .env.example to .env and fill credentials (see README.md).' \
 	  'Run:   make run-sv | run-csm | run-wk | run-sc' \
 	  'Seed:  make run-sd SD_NAME=tenant  (loads runtime env + .env.seeder)' \
 	  'Atlas: make migrate-up | migrate-status | migrate-down' \
 	  '       make migrate-diff NAME=add_room | migrate-baseline BASELINE=<version>' \
 	  'Check: make test | lint | vuln | sec | scan' \
-	  'Paths: ENV_FILE=.env.local MIGRATE_ENV_FILE=.env.migrate SEED_ENV_FILE=.env.seeder'
+	  'Paths: ENV_FILE=.env MIGRATE_ENV_FILE=.env.migrate SEED_ENV_FILE=.env.seeder'
 
 proto-gen:
 	@mkdir -p "$(GEN_DIR)/ai"
@@ -76,13 +72,13 @@ migrate-build:
 
 # atlas.hcl's local environment refers to ./tmp/migrate.
 migrate-up migrate-status migrate-down: migrate-build
-	@$(LOAD_ENV); \
+	@$(LOAD_MIGRATION_ENV); \
 	load_env "$$MIGRATE_ENV_FILE"; \
 	: "$${DATABASE_URL:?Set DATABASE_URL in the migration env file}"; \
 	atlas migrate $(if $(filter migrate-up,$@),apply,$(patsubst migrate-%,%,$@)) --env local
 
 migrate-diff: migrate-build
-	@$(LOAD_ENV); \
+	@$(LOAD_MIGRATION_ENV); \
 	load_env "$$MIGRATE_ENV_FILE"; \
 	: "$${DATABASE_URL:?Set DATABASE_URL in the migration env file}"; \
 	: "$${DATABASE_DEV_URL:?Set DATABASE_DEV_URL to a disposable development database}"; \
@@ -93,7 +89,7 @@ migrate-diff: migrate-build
 	atlas migrate diff "$$name" --env local
 
 migrate-baseline: migrate-build
-	@$(LOAD_ENV); \
+	@$(LOAD_MIGRATION_ENV); \
 	load_env "$$MIGRATE_ENV_FILE"; \
 	: "$${DATABASE_URL:?Set DATABASE_URL in the migration env file}"; \
 	baseline="$$BASELINE"; \
@@ -112,36 +108,19 @@ build-sv build-csm build-sc build-wk build-sd:
 	go build -o "$(TMP_DIR)/$(BINARY)" "./cmd/$(BINARY)"
 
 run-sv: build-sv
-	@$(LOAD_ENV); \
-	load_env "$$ENV_FILE"; \
-	export GOOGLE_APPLICATION_CREDENTIALS="$${GOOGLE_APPLICATION_CREDENTIALS:-$$GCS_KEY_PATH}"; \
-	exec "$(SV_BIN)"
+	@exec "$(SV_BIN)"
 
 run-csm: build-csm
-	@$(LOAD_ENV); \
-	load_env "$$ENV_FILE"; \
-	export GOOGLE_APPLICATION_CREDENTIALS="$${GOOGLE_APPLICATION_CREDENTIALS:-$$GCS_KEY_PATH}"; \
-	exec "$(CSM_BIN)"
+	@exec "$(CSM_BIN)"
 
 run-sc: build-sc
-	@$(LOAD_ENV); \
-	load_env "$$ENV_FILE"; \
-	exec "$(SC_BIN)"
+	@exec "$(SC_BIN)"
 
 run-wk: build-wk
-	@$(LOAD_ENV); \
-	load_env "$$ENV_FILE"; \
-	exec "$(WK_BIN)"
+	@exec "$(WK_BIN)"
 
 run-sd: build-sd
-	@$(LOAD_ENV); \
-	seed_override="$${SD_NAME-}"; \
-	load_env "$$ENV_FILE"; \
-	load_env "$$SEED_ENV_FILE"; \
-	if [[ -n "$$seed_override" ]]; then export SD_NAME="$$seed_override"; fi; \
-	case "$${SD_NAME-}" in tenant|admin|migrate) ;; \
-	  *) echo 'SD_NAME must be tenant, admin or migrate.' >&2; exit 1 ;; esac; \
-	exec "$(SD_BIN)"
+	@exec "$(SD_BIN)"
 
 clean:
 	rm -rf -- "$(TMP_DIR)"

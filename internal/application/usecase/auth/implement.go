@@ -256,7 +256,7 @@ func (u *authUseCaseImpl) ChangePassword(ctx context.Context, schema string, use
 		return err
 	}
 
-	cacheKey := fmt.Sprintf("%suser_version:%d", schema, user.ID)
+	cacheKey := fmt.Sprintf("%s:user_version:%d", schema, user.ID)
 	if err = u.cachePro.Increment(ctx, cacheKey); err != nil {
 		u.logPro.Error("Increase token version failed", port.String("schema", schema), port.Error(err))
 	}

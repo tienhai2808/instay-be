@@ -8,7 +8,7 @@ go get -u gorm.io/driver/postgres (DB driver)
 
 go get -u gorm.io/gorm (ORM)
 
-go get github.com/spf13/viper (Load config)
+go get github.com/joho/godotenv (Load .env)
 
 go get github.com/go-playground/validator/v10 (Validator)
 
@@ -28,7 +28,7 @@ go get github.com/robfig/cron/v3 (Schedule)
 
 go get -u github.com/gosimple/slug (Slug)
 
-go get cloud.google.com/go/storage (File storage)
+go get github.com/aws/aws-sdk-go-v2/config github.com/aws/aws-sdk-go-v2/service/s3 (S3-compatible file storage)
 
 go get github.com/emersion/go-imap (IMAP)
 

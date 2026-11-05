@@ -3,101 +3,103 @@ package config
 import "time"
 
 type ServerConfig struct {
-	Port             int           `mapstructure:"port"`
-	HeaderTenant     string        `mapstructure:"header_tenant"`
-	WriteTimeout     time.Duration `mapstructure:"write_timeout"`
-	ReadTimeout      time.Duration `mapstructure:"read_timeout"`
-	IdleTimeout      time.Duration `mapstructure:"idle_timeout"`
-	MaxHeaderBytes   int           `mapstructure:"max_header_bytes"`
-	AllowMethods     []string      `mapstructure:"allow_methods"`
-	AllowHeaders     []string      `mapstructure:"allow_headers"`
-	ExposeHeaders    []string      `mapstructure:"expose_headers"`
-	AllowCredentials bool          `mapstructure:"allow_credentials"`
-	MaxAge           time.Duration `mapstructure:"max_age"`
+	Port int
+
+	WriteTimeout     time.Duration
+	ReadTimeout      time.Duration
+	IdleTimeout      time.Duration
+	MaxHeaderBytes   int
+	AllowMethods     []string
+	AllowHeaders     []string
+	ExposeHeaders    []string
+	AllowCredentials bool
+	MaxAge           time.Duration
 }
 
 type ServicesConfig struct {
-	AIHost string `mapstructure:"ai_host"`
-	AIPort int    `mapstructure:"ai_port"`
+	AIHost string
+	AIPort int
 }
 
 type TokenConfig struct {
-	AccessName       string        `mapstructure:"access_name"`
-	RefreshName      string        `mapstructure:"refresh_name"`
-	GuestName        string        `mapstructure:"guest_name"`
-	SecretKey        string        `mapstructure:"secret_key"`
-	APIKeySecret     string        `mapstructure:"api_key_secret"`
-	APIKeyHeader     string        `mapstructure:"api_key_header"`
-	APIKeyPrefix     string        `mapstructure:"api_key_prefix"`
-	AccessExpiresIn  time.Duration `mapstructure:"access_expires_in"`
-	RefreshExpiresIn time.Duration `mapstructure:"refresh_expires_in"`
+	AccessName       string
+	RefreshName      string
+	GuestName        string
+	SecretKey        string
+	APIKeySecret     string
+	APIKeyHeader     string
+	APIKeyPrefix     string
+	AccessExpiresIn  time.Duration
+	RefreshExpiresIn time.Duration
 }
 
 type LogConfig struct {
-	Level    string `mapstructure:"level"`
-	Encoding string `mapstructure:"encoding"`
+	Level    string
+	Encoding string
 }
 
 type SQLConfig struct {
-	Host     string `mapstructure:"host"`
-	Port     int    `mapstructure:"port"`
-	User     string `mapstructure:"user"`
-	Password string `mapstructure:"password"`
-	SSLMode  string `mapstructure:"ssl_mode"`
-	DBName   string `mapstructure:"db_name"`
+	Host     string
+	Port     int
+	User     string
+	Password string
+	SSLMode  string
+	DBName   string
 }
 
 type NoSQLConfig struct {
-	URI             string        `mapstructure:"uri"`
-	DBName          string        `mapstructure:"db_name"`
-	MaxPoolSize     uint64        `mapstructure:"max_pool_size"`
-	MinPoolSize     uint64        `mapstructure:"min_pool_size"`
-	MaxConnIdleTime time.Duration `mapstructure:"max_conn_idle_time"`
+	URI             string
+	DBName          string
+	MaxPoolSize     uint64
+	MinPoolSize     uint64
+	MaxConnIdleTime time.Duration
 }
 
 type CacheConfig struct {
-	Host     string `mapstructure:"host"`
-	Port     int    `mapstructure:"port"`
-	Password string `mapstructure:"password"`
-	UseSSL   bool   `mapstructure:"use_ssl"`
+	Host     string
+	Port     int
+	Password string
+	UseSSL   bool
 }
 
 type StorageConfig struct {
-	Bucket string `mapstructure:"bucket"`
+	Bucket        string
+	Endpoint      string
+	PublicBaseURL string
 }
 
 type KYCConfig struct {
-	AccessToken   string `mapstructure:"access_token"`
-	WorkFlowID    string `mapstructure:"workflow_id"`
-	WebhookSecret string `mapstructure:"webhook_secret"`
+	AccessToken   string
+	WorkFlowID    string
+	WebhookSecret string
 }
 
 type MQConfig struct {
-	Host     string `mapstructure:"host"`
-	Port     int    `mapstructure:"port"`
-	User     string `mapstructure:"user"`
-	Password string `mapstructure:"password"`
-	VHost    string `mapstructure:"vhost"`
-	UseSSL   bool   `mapstructure:"use_ssl"`
+	Host     string
+	Port     int
+	User     string
+	Password string
+	VHost    string
+	UseSSL   bool
 }
 
 type MailerConfig struct {
-	Host     string `mapstructure:"host"`
-	Port     int    `mapstructure:"port"`
-	User     string `mapstructure:"user"`
-	Password string `mapstructure:"password"`
+	Host     string
+	Port     int
+	User     string
+	Password string
 }
 
 type Config struct {
-	Server   ServerConfig   `mapstructure:"server"`
-	Services ServicesConfig `mapstructure:"services"`
-	Token    TokenConfig    `mapstructure:"token"`
-	Log      LogConfig      `mapstructure:"log"`
-	SQL      SQLConfig      `mapstructure:"sql"`
-	NoSQL    NoSQLConfig    `mapstructure:"nosql"`
-	Cache    CacheConfig    `mapstructure:"cache"`
-	Storage  StorageConfig  `mapstructure:"storage"`
-	MQ       MQConfig       `mapstructure:"mq"`
-	Mailer   MailerConfig   `mapstructure:"mailer"`
-	KYC      KYCConfig      `mapstructure:"kyc"`
+	Server   ServerConfig
+	Services ServicesConfig
+	Token    TokenConfig
+	Log      LogConfig
+	SQL      SQLConfig
+	NoSQL    NoSQLConfig
+	Cache    CacheConfig
+	Storage  StorageConfig
+	MQ       MQConfig
+	Mailer   MailerConfig
+	KYC      KYCConfig
 }

@@ -44,9 +44,9 @@ import (
 	ormImpl "github.com/InstaySystem/is_v2-be/internal/infrastructure/persistence/orm/implement"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/ai"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/fcm"
-	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/gcs"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/rabbitmq"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/redis"
+	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/s3"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/smtp"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/sonyflake"
 	"github.com/InstaySystem/is_v2-be/internal/infrastructure/provider/zap"
@@ -59,8 +59,8 @@ type Container struct {
 	SQL                      *initialization.SQL
 	NoSQL                    *initialization.NoSQL
 	cache                    *initialization.Cache
-	mq                       *initialization.MessageQueue
 	stor                     *initialization.Storage
+	mq                       *initialization.MessageQueue
 	idGen                    *initialization.IDGen
 	pn                       *initialization.PushNotification
 	gRPCClients              *initialization.GRPCClients
@@ -271,7 +271,7 @@ func (c *Container) InitConsumer() (err error) {
 	c.MQPro = rabbitmq.NewMessageQueueProvider(c.mq.Connection(), c.log.Logger())
 	c.MailerPro = smtp.NewMailerProvider(c.cfg.Mailer)
 	c.PNPro = fcm.NewPushNotificationProvider(c.pn.Client())
-	c.StoragePro = gcs.NewStorageProvider(c.cfg.Storage, c.stor.Client())
+	c.StoragePro = s3.NewStorageProvider(c.cfg.Storage, c.stor.Client())
 
 	return nil
 }
@@ -378,9 +378,6 @@ func (c *Container) Cleanup() {
 	}
 	if c.cache != nil {
 		c.cache.Close()
-	}
-	if c.stor != nil {
-		c.stor.Close()
 	}
 	if c.log != nil {
 		c.log.Close()
